@@ -11,7 +11,7 @@ $(document).ready(function(){
   $(quotesBtn).click(function () {
     console.log('click');
     $.ajax({
-      url: "http://127.0.0.1:5500/proxy.php",
+      url: `${window.location.origin}/proxy.php`,
       method: "GET",
       dataType: 'json',
       success: function (data) {
