@@ -91,7 +91,7 @@ body{
 
 /* intro */
 .intro{
-  background: url(/asset/img/IntroBg.png) no-repeat;
+  background: url(/asset/img/IntroBg.svg) no-repeat;
   background-size: cover;
   color:white;
 }
@@ -270,7 +270,7 @@ body{
   flex-wrap: wrap;
 }
 .informationBlock_list_item {
-  flex-basis: 25%;
+  flex-basis: 23%;
   border:1px solid #ECECEC;
 }
 .informationBlock_list_img {
