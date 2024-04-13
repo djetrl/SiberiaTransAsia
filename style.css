@@ -12,6 +12,10 @@ table{border-collapse:collapse;border-spacing:0}
 body{
   font-family: 'Open Sans';
 }
+
+:root{
+  --BasicFont:24px;
+}
 /* container */
 .container{
   max-width: 1348px;
@@ -23,8 +27,9 @@ body{
 .group_title{
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
+  font-size: var(--BasicFont);
+  line-height:calc(var(--BasicFont) + 9px);
+
   color: #333333;
 
   flex: none;
@@ -40,7 +45,7 @@ body{
 
   font-style: normal;
   font-weight: 600;
-  font-size: 48px;
+  font-size: calc(var(--BasicFont) + 24px);
   line-height: 130%;
 
   color: #555555;
@@ -50,7 +55,7 @@ body{
 .sublogo{
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: calc(var(--BasicFont) - 4px);
   line-height: 130%;
 
   color: #555555;
@@ -68,6 +73,20 @@ body{
   text-align: right;
 }
 .contact_item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(var(--BasicFont) - 8px);
+  line-height: calc(var(--BasicFont) - 2px);
+  /* identical to box height */
+
+  color: #000000;
+
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
 }
 
 /* intro */
@@ -83,7 +102,7 @@ body{
 
   font-style: normal;
   font-weight: 700;
-  font-size: 36px;
+  font-size: calc(var(--BasicFont) + 12px);
   line-height: 130%;
 
   letter-spacing: 0.01em;
@@ -113,7 +132,7 @@ body{
 
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
+  font-size:var(--BasicFont);
   line-height: 130%;
 
   letter-spacing: 0.01em;
@@ -140,7 +159,7 @@ body{
 .intro_text{
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: calc(var(--BasicFont) - 8px);
   line-height: 130%;
   letter-spacing: 0.01em;
 
@@ -155,6 +174,7 @@ body{
 
 .catolog_list{
   display: flex;
+  flex-wrap: wrap;
 }
 .catolog_group:nth-child(1){
   margin-bottom: 120px;
@@ -167,15 +187,14 @@ body{
   gap: 35px;
   padding: 60px 0;
   border:1px solid #ECECEC;
-  min-width: 269px;
+  width: clamp(220px, 75%, 268px);
 }
 
 .catolog_list_text{
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: calc(var(--BasicFont) - 10px);
   line-height: 130%;
-  /* or 18px */
 
   color: #555555;
 
@@ -202,7 +221,7 @@ body{
   display: flex;
 }
 .advantage_list_img {
-  border-radius:50%;
+  border-radius: 50%;
   margin-right: 27px;
 }
 .advantage_item_textContainer {
@@ -214,8 +233,22 @@ body{
 
 }
 .advantage_item_title {
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(var(--BasicFont) - 2px);
+  font-size: calc(var(--BasicFont) - 8px);
+  color: #333333;
+
+
 }
 .advantage_item_text {
+    font-style: normal;
+    font-weight: 400;
+    font-size:  calc(var(--BasicFont) - 11px);
+    line-height:  calc(var(--BasicFont) - 6px);
+
+    color: #666666;
 }
 
 /* informationBlock */
@@ -233,6 +266,8 @@ body{
 .informationBlock_list {
   display: flex;
   gap: 32px;
+
+  flex-wrap: wrap;
 }
 .informationBlock_list_item {
   flex-basis: 25%;
@@ -247,7 +282,7 @@ body{
 .informationBlock_date {
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
+  font-size: calc(var(--BasicFont) - 11px);
   line-height: 170%;
 
   color: #999999;
@@ -261,7 +296,7 @@ body{
 
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: calc(var(--BasicFont) - 10px);
   line-height: 170%;
 
   color: #333333;
@@ -283,8 +318,8 @@ body{
 .quotes_title {
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 33px;
+  font-size:var(--BasicFont);
+  line-height: calc(var(--BasicFont) + 9px);
 
   color: #000000;
 
@@ -314,8 +349,8 @@ body{
 .quote_text{
   font-style: normal;
   font-weight: 400;
-  font-size: 40px;
-  line-height: 54px;
+  font-size: calc(var(--BasicFont) + 16px);
+  line-height:calc(var(--BasicFont) + 30px);
 
   color: #555555;
 
@@ -327,8 +362,8 @@ body{
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: calc(var(--BasicFont) - 8px);
+  line-height: calc(var(--BasicFont) - 5px);
 
   color: #555555;
 
@@ -345,8 +380,8 @@ body{
 .quotes_btn_signature {
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: calc(var(--BasicFont) - 10px);
+  line-height: calc(var(--BasicFont) - 5px);
 
   color: #000000;
 
@@ -363,8 +398,8 @@ body{
 
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: calc(var(--BasicFont) - 10px);
+  line-height: calc(var(--BasicFont) - 5px);
 
   color: #FFFFFF;
 
@@ -384,8 +419,159 @@ body{
 .footer_signature {
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: calc(var(--BasicFont) - 10px);
+  line-height: calc(var(--BasicFont) - 5px);
 
   color: #FFFFFF;
 }
+
+@media screen and (max-width:1377px){
+  .container{
+    padding: 60px 15px;
+  }
+  .header > .container{
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width:800px){
+  :root{
+    --BasicFont:22px;
+  }
+  .logo{
+    margin-right: 10px;
+  }
+  .catolog_list_item {
+    flex-basis: 49.7%;
+  }
+
+  .advantage_list_item {
+    flex-basis: 50%;
+  }
+  .informationBlock_list_item {
+    flex-basis: 46.91%;
+  }
+  .quotes_btn_container {
+    gap: 16px;
+    flex-direction: column;
+  }
+  .quotes_btn_signature{
+    font-size: calc(var(--BasicFont) - 2px);
+    line-height: 135.71% ;
+  }
+
+  .quotes_btn{
+    font-size: calc(var(--BasicFont) - 2px);
+    line-height: 135.71% ;
+  }
+  .footer_signature{
+    font-size: calc(var(--BasicFont) - 2px);
+    line-height: 135.71% ;
+  }
+/* 600 */
+@media screen and (max-width:600px){
+  :root{
+    --BasicFont:18px;
+  }
+  .catolog_list_item {
+    flex-basis: 100%;
+  }
+
+  .advantage_list_item {
+    flex-basis: 100%;
+  }
+  .informationBlock_list_item {
+    flex-basis: 100%;
+  }
+  .informationBlock_text {
+    font-size: calc(var(--BasicFont) - 5px);
+  }
+  .informationBlock_date{
+    font-size: calc(var(--BasicFont) - 6px);
+  }
+  .quote_text{
+    font-size: calc(var(--BasicFont) + 6px);
+  }
+  .sublogo{
+    text-align:center;
+  }
+}
+
+@media screen and (max-width:430px){
+ :root{
+  --BasicFont:16px;
+ }
+ .group_title{
+  font-size: calc(var(--BasicFont) + 8px);
+ }
+ /* header */
+ .logo{
+  font-size: calc(var(--BasicFont) + 2.57px);
+ }
+ .sublogo{
+  font-size: calc(var(--BasicFont) - 6px);
+ }
+ .contact_container{
+  gap: 0;
+ }
+ .contact_item{
+  font-size: calc(var(--BasicFont) - 6px);
+ }
+ /* intro */
+ .intro_title{
+  font-size: calc(var(--BasicFont) + 2px);
+ }
+ .intro_list{
+  margin: 15px 0;
+ }
+ .intro_list_item{
+  font-size: calc(var(--BasicFont) - 1px);
+ }
+ .intro_text{
+  font-size: calc(var(--BasicFont) - 6px);
+ }
+ /* catalog */
+ .catolog_list_text{
+  font-size: calc(var(--BasicFont) - 2px);
+ }
+
+ 
+
+
+ /* advantage */
+ .advantage_item_title {
+  line-height: calc(var(--BasicFont) + 6px);
+  font-size: var(--BasicFont);
+
+}
+.advantage_item_text {
+  font-size: calc(var(--BasicFont) - 3px);
+    line-height:  calc(var(--BasicFont) + 2px);
+}
+
+/* informationBlock */
+.informationBlock_text{
+  font-size: calc(var(--BasicFont) - 2px);
+    line-height:  170%;
+}
+.informationBlock_date{
+  font-size: calc(var(--BasicFont) - 3px);
+  line-height:  170%;
+}
+
+/* quote */
+  .quote_text{
+    font-size: calc(var(--BasicFont) + 8px);
+    line-height:  137%;
+  }
+  .quote_signature{
+    font-size: calc(var(--BasicFont) - 6px);
+    line-height:  120%;
+  }
+  .footer > .container{
+    margin: 80px 10px;
+  }
+}
+
+
+}
+

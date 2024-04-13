@@ -9,19 +9,35 @@ $(document).ready(function(){
   console.log(quotesBtn);
   const quotesList = document.querySelector('.quotes_list');
   $(quotesBtn).click(function () {
-    console.log('click');
     $.ajax({
-      url: `${window.location.origin}/proxy.php`,
-      method: "GET",
-      dataType: 'json',
-      success: function (data) {
-        console.log(data);
+      jsonp: "jsonp",
+      dataType: "jsonp",
+      url: "http://api.forismatic.com/api/1.0/",
+      contentType: "application/jsonp",
+      data: {
+        lang: "ru",
+        method: "getQuote",
+        format: 'jsonp'
       },
-      error: function (xhr, status, error) {
-        console.error(error);
-      }
-    });
+      success: function({quoteAuthor, quoteText}) { 
+        const demoQuote = document.querySelector('#demoQuote')
+        if(demoQuote){
+          demoQuote.parentNode.removeChild(demoQuote);
 
+        }
+        let newQuote = `
+          <li class="quotes_item">
+            <quote class="quote">
+              <quoteText class="quote_text">${quoteText}</quoteText>
+              ${quoteAuthor && `<quoteAuthor class="quote_signature">© ${quoteAuthor}</quoteAuthor>`}
+            </quote>
+          </li>
+        `; 
+        $(newQuote).hide(0).prependTo(quotesList).slideDown(300); 
+        window.scrollIntoView(quotesList)
+      }
   }); 
+
+});
 
 });
