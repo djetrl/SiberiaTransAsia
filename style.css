@@ -91,7 +91,7 @@ body{
 
 /* intro */
 .intro{
-  background: url(/asset/img/IntroBg.svg) no-repeat;
+  background: url('/asset/img/IntroBg.png') no-repeat;
   background-size: cover;
   color:white;
 }
